@@ -39,9 +39,6 @@ public class OrderSectionTest {
         orderPageObject.waiteUntilOrderFormWillDisplayed();
 
         assertTrue("Ожидалолсь, что форма оформления была отображена",orderPageObject.checkIsOrderFormOpen());
-
-        driver.quit();
-
     }
 
     @Test
@@ -51,6 +48,7 @@ public class OrderSectionTest {
         driver.get(BASE_URL);
 
         OrderPageObject orderPageObject = new OrderPageObject(driver);
+
         orderPageObject.waitUntilHomePageWillBeLoaded();
 
         orderPageObject.clickToCookieButton();
@@ -62,8 +60,6 @@ public class OrderSectionTest {
         orderPageObject.waiteUntilOrderFormWillDisplayed();
 
         assertTrue("Ожидалолсь, что форма оформления была отображена",orderPageObject.checkIsOrderFormOpen());
-
-        driver.quit();
     }
 
     @Test
@@ -86,9 +82,6 @@ public class OrderSectionTest {
 
         assertTrue("Ожидалось, что будет отображена страница 'Про ренту'",
                 orderPageObject.checkIsRentStepDisplayed());
-
-        driver.quit();
-
     }
 
     @Test
@@ -109,9 +102,6 @@ public class OrderSectionTest {
 
         assertTrue("Ожидалось, что будет отображена страница 'Для кого самокат'",
                 orderPageObject.checkIsOrderFormOpen());
-
-        driver.quit();
-
     }
 
     @Test
@@ -142,10 +132,6 @@ public class OrderSectionTest {
 
         assertTrue("Ожидалось, что пупап подтверждения заказа отображен",
                 confirmationPopupPageObject.isPopUpDisplayed());
-
-
-        driver.quit();
-
     }
 
     @Test
@@ -171,8 +157,6 @@ public class OrderSectionTest {
 
         assertTrue("Ожидалось, что будет отображена страница 'Про Ренту'",
                 orderPageObject.checkIsRentStepDisplayed());
-
-        driver.quit();
     }
 
     @Test

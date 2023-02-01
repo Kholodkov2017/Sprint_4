@@ -4,21 +4,17 @@ import helpers.Constants;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.After;
-
-import static helpers.Constants.*;
-import static helpers.DriverFactoryHelper.*;
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import pageobject.QuestionPageObject;
 
+import static helpers.Constants.*;
+import static helpers.DriverFactoryHelper.*;
+import static org.junit.Assert.*;
 @RunWith(JUnitParamsRunner.class)
 public class QuestionSectionTest {
     private WebDriver driver;
-
-
 
     @Test
     @Parameters(method = "checkQuestionTitleSource")
@@ -34,12 +30,9 @@ public class QuestionSectionTest {
 
         String actualTitle = questionPageObject.getQuestionTitleText();
 
-
-
         assertEquals(String.format("Ожидаемое название секции  - \"%s\"," +
                         " фактическое название секции - \"%s\"", expectedTitle, actualTitle),
                 expectedTitle, actualTitle);
-        driver.quit();
     }
 
     @Test
@@ -56,13 +49,10 @@ public class QuestionSectionTest {
 
         int actualQuestionsCount = questionPageObject.getQuestionsCount();
 
-
         assertEquals(String.format("Ожидаемое количество вопросов - %d," +
                         " фактическое количество вопросов - %d", expectedQuestionsCount, actualQuestionsCount),
                         expectedQuestionsCount, actualQuestionsCount);
-        driver.quit();
     }
-
 
     @Test
     @Parameters(method = "getQuestionsAndAnswersTexts")
@@ -93,7 +83,6 @@ public class QuestionSectionTest {
         assertEquals(String.format("Ожидаемый ответ  - \"%s\"," +
                         " фактический ответ - \"%s\"", expectedAnswer , actualAnswer),
                 expectedAnswer, actualAnswer);
-
     }
 
     @Test
@@ -114,7 +103,6 @@ public class QuestionSectionTest {
 
         questionPageObject.waitForAnswerDisplayed(index);
 
-
         if (index == Constants.QUESTIONS_COUNT - 1) {
             questionPageObject.clickToAccordionHeading(0);
             questionPageObject.waitForAnswerDisplayed(0);
@@ -131,13 +119,10 @@ public class QuestionSectionTest {
                     questionPageObject.checkIsPanelOpen(index + 1));
             assertTrue(String.format( "Ожидалось, что элемент аккордеона под номером %d будет закрыт", index), questionPageObject.checkIsPanelClosed(index));
         }
-        driver.quit();
     }
 
     @After
-    public void teardown() {
-        driver.quit();
-    }
+    public void teardown() {driver.quit();}
 
     //region Question And Answers Factory
     private static Object[] checkQuestionsCountSource() {
