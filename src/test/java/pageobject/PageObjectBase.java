@@ -8,6 +8,7 @@ public class PageObjectBase {
     protected PageObjectBase(WebDriver driver) {
         this.driver = driver;
     }
+
     /**
      * Локатор для кнопки согласия на использование куки
      */

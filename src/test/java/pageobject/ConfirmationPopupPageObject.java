@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static helpers.Constants.WAITING_TIMEOUT;
 
 public class ConfirmationPopupPageObject extends PageObjectBase {
@@ -33,7 +32,6 @@ public class ConfirmationPopupPageObject extends PageObjectBase {
     @FindBy(xpath = ".//div[@class='Order_Modal__YZ-d3']/" +
             "div[@class='Order_ModalHeader__3FDaJ' and text()='Хотите оформить заказ?']")
     WebElement confirmationPopupTitle;
-
 
     /**
      * Метод имитирующий ожидание момента отображения пупапа подтверждения

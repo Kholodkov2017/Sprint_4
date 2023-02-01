@@ -15,8 +15,6 @@ public class OrderPageObject extends PageObjectBase {
         super(driver);
     }
 
-
-
     //region Плейсхолдеры элементов первой ('Для кого самокат') и второй ('Про аренду') форм
     private static final String FIRSTNAME_FIELD_PLACEHOLDER = "* Имя";
     private static final String LASTNAME_FIELD_PLACEHOLDER = "* Фамилия";
@@ -32,7 +30,6 @@ public class OrderPageObject extends PageObjectBase {
 
     private static final String COURIER_COMMENT_FIELD_PLACEHOLDER = "Комментарий для курьера";
     //endregion
-
 
     /**
      * Кнопка 'Заказать' в хедере главной страницы
@@ -78,7 +75,6 @@ public class OrderPageObject extends PageObjectBase {
     private final By courierCommentInput = By.xpath(generateFormFieldXPath(COURIER_COMMENT_FIELD_PLACEHOLDER));
     //endregion
 
-
     /**
      * Локатор кнопки 'Далее' на форме 'Для кого самокат'
      */
@@ -94,7 +90,6 @@ public class OrderPageObject extends PageObjectBase {
         return ".//input[@placeholder='"+ placeholderText+ "']";
     }
 
-
     /**
      * Метод, выбирающий станцию метро из выпадающего списка
      * @param dataIndex - индекс нужной станции
@@ -105,7 +100,6 @@ public class OrderPageObject extends PageObjectBase {
                 "/li[@data-index='"+dataIndex+"']"));
     }
 
-
     /**
      * Метод ожидающий, пока домашняя строница прогрузится
      */
@@ -113,6 +107,7 @@ public class OrderPageObject extends PageObjectBase {
         new WebDriverWait(driver, WAITING_TIMEOUT).until(
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
+
     /**
      * Метод, проверяющий, открылась ли форма 'Для кого самокат'
      */
@@ -234,6 +229,5 @@ public class OrderPageObject extends PageObjectBase {
         fillFirstPartOrderForm(inputData);
 
         clickToNextOrderStepButton();
-
     }
 }

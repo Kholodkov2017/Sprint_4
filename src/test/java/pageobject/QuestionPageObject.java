@@ -1,12 +1,11 @@
 package pageobject;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static helpers.Constants.WAITING_TIMEOUT;
-
 
 public class QuestionPageObject extends PageObjectBase {
     private static final String ACCORDION_HEADING_ID_PART = "accordion__heading-";
@@ -90,7 +89,6 @@ public class QuestionPageObject extends PageObjectBase {
         driver.findElement(getAccordionHeadingByIndex(index)).click();
     }
 
-
     /**
      * Метод ожидающий, пока домашняя строница прогрузится
      */
@@ -107,7 +105,6 @@ public class QuestionPageObject extends PageObjectBase {
         new WebDriverWait(driver, WAITING_TIMEOUT).until(driver -> (
                 driver.findElement(getAccordionPanelByIndex(index)).isDisplayed()));
     }
-
 
     /**
      * Метод, проверяющий, была ли закрыта панель с ответом
@@ -134,5 +131,4 @@ public class QuestionPageObject extends PageObjectBase {
         WebElement element = driver.findElement(questionAccordionComponent);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
     }
-
 }

@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static helpers.Constants.WAITING_TIMEOUT;
 
 public class SuccessOrderPopupPageObject extends PageObjectBase {
@@ -39,7 +38,6 @@ public class SuccessOrderPopupPageObject extends PageObjectBase {
     public void waiteUntilSuccessOrderPopupWillDisplayed() {
         new WebDriverWait(driver, WAITING_TIMEOUT).until(driver -> (
                 successOrderPopupTitle.isDisplayed()));
-
     }
 
     /**
