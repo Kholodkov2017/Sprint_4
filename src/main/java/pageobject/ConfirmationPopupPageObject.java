@@ -18,20 +18,20 @@ public class ConfirmationPopupPageObject extends PageObjectBase {
      * Кнопка 'Да' на форме потдверждения заказа
      */
     @FindBy(xpath = ".//div[@class='Order_Buttons__1xGrp']/button[text()='Да']")
-    WebElement yesButton;
+    private WebElement yesButton;
 
     /**
      * Кнопка 'Нет' на форме подтверждения заказа
      */
     @FindBy(xpath = ".//div[@class='Order_Buttons__1xGrp']/button[text()='Нет']")
-    WebElement noButton;
+    private WebElement noButton;
 
     /**
      * Заголовок формы подтверждения заказа
      */
     @FindBy(xpath = ".//div[@class='Order_Modal__YZ-d3']/" +
             "div[@class='Order_ModalHeader__3FDaJ' and text()='Хотите оформить заказ?']")
-    WebElement confirmationPopupTitle;
+    private WebElement confirmationPopupTitle;
 
     /**
      * Метод имитирующий ожидание момента отображения пупапа подтверждения
