@@ -1,4 +1,4 @@
-package factories;
+package model;
 
 import lombok.Builder;
 import lombok.Data;

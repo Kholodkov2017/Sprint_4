@@ -1,6 +1,6 @@
 package pageobject;
 
-import factories.OrderModel;
+import model.OrderModel;
 import helpers.OrderButtonEnum;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -176,8 +176,8 @@ public class OrderPageObject extends PageObjectBase {
     public void fillTheSecondPartOrderForm(OrderModel inputData) {
         driver.findElement(calendarInput).click();
         driver.findElement(By.xpath(".//button[@aria-label='"+inputData.getOrderMonth()+"']")).click();
-        driver.findElement(By.xpath(".//div[@class='react-datepicker__day react-datepicker__day--"
-                +inputData.getDeliveryDate()+"']")).click();
+        driver.findElement(By.xpath(".//div[@role='button' and contains(text(), '"
+                + inputData.getDeliveryDate() + "')]")).click();
         driver.findElement(rentPeriodInput).click();
         if (!inputData.getRentPeriod().isEmpty()) {
             driver.findElement(By.xpath( ".//div[@class='Dropdown-menu']/" +

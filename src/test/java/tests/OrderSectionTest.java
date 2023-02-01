@@ -1,7 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
-import factories.OrderModel;
+import model.OrderModel;
 import helpers.OrderButtonEnum;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -227,7 +227,7 @@ public class OrderSectionTest {
                 .address(fake.address().streetAddress())
                 .phone("+79995554433")
                 .metroStation("5")
-                .deliveryDate("015")
+                .deliveryDate("15")
                 .rentPeriod("четверо суток")
                 .commentForCourier("Какой-то комментарий")
                 .color("gray")
@@ -255,7 +255,7 @@ public class OrderSectionTest {
                 .address(fake.address().streetAddress())
                 .phone("+79995554433")
                 .metroStation("5")
-                .deliveryDate("015")
+                .deliveryDate("15")
                 .rentPeriod("")
                 .orderMonth("Previous Month")
                 .build();
